@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/leyou/leyou.iml" filepath="$PROJECT_DIR$/leyou/leyou.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-grateway/leyou-grateway.iml" filepath="$PROJECT_DIR$/leyou/leyou-grateway/leyou-grateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item-interface/leyou-item-interface.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item-interface/leyou-item-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou/leyou-item/leyou-item-service/leyou-item-service.iml" filepath="$PROJECT_DIR$/leyou/leyou-item/leyou-item-service/leyou-item-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/leyou/leyou-registry/leyou-registry.iml" filepath="$PROJECT_DIR$/leyou/leyou-registry/leyou-registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/leyou-springcloud.iml" filepath="$PROJECT_DIR$/.idea/leyou-springcloud.iml" />
     </modules>
