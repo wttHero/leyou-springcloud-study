@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hm49?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 102345..
+    ##########配置rabbitmq##########
+  rabbitmq:
+    host: 192.168.239.130
+    username: admin
+    password: admin
+    virtual-host: /
+    template:
+      exchange: LEYOU.ITEM.EXCHANGE #默认交换机配置
+    publisher-confirms: true #生产者确认机制，确保消息会正确发送，如果发送失败会有错误回执，从而触发重试
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 15 #过期时间
+    lease-renewal-interval-in-seconds: 5 #心跳时间
+mybatis:
+  type-aliases-package: com.leyou.item.pojo
+logging:
+  level:
+    root: info
+    com.leyou.item.mapper: debug

@@ -1,0 +1,35 @@
+server:
+  port: 8084
+spring:
+  # 多个接口上的@FeignClient(“相同服务名”)会报错，overriding is disabled。
+  # 设置 为true ,即 允许 同名
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: goods-web
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    virtual-host: /
+    host: 192.168.239.130
+    username: admin
+    password: admin
+    template:
+      exchange: LEYOU.ITEM.EXCHANGE #默认交换机配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5
+######配置hystrix熔断########
+hystrix:
+  command:
+    serverMethod:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000 #配置hystrix熔断的超时时长
+ ########开启feign的熔断#######
+feign:
+  hystrix:
+    enabled: true #开启Feign的熔断功能（Feign的熔断功能默认不开启）
