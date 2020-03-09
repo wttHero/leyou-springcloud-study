@@ -1,0 +1,13 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: leyou-registry
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    fetch-registry: false # 不拉去服务
+  instance:
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 15
