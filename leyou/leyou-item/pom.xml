@@ -13,6 +13,7 @@
     <artifactId>leyou-item</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
+        <!--从父工程整体打包时需要移除leyou-item-interface模块，否则会打包失败（由于该模块只能生产可编译jar）-->
         <module>leyou-item-interface</module>
         <module>leyou-item-service</module>
     </modules>

@@ -29,8 +29,8 @@ public class GoodsService {
     @Resource
     private BrandMapper brandMapper;
     //注入rabbitmq的消息模板
-    @Resource
-    private AmqpTemplate amqpTemplate;
+//    @Resource
+//    private AmqpTemplate amqpTemplate;
 
     public PageResult<SpuBo> querySpuBoByPage(String key, Boolean saleable, Integer page, Integer rows) {
         Example example = new Example(Spu.class);
@@ -76,7 +76,7 @@ public class GoodsService {
             //此方法可以指定交换机名称，到时监听队列的时候也是监听此交换机即可
 //            this.amqpTemplate.convertAndSend("LEYOU.ITEM.EXCHANGE","item.select",id);
             //此方法未指定交换机名称，则会使用配置文件application.yml中默认配置的交换机
-            this.amqpTemplate.convertAndSend("item.select",id);
+//            this.amqpTemplate.convertAndSend("item.select",id);
         } catch (AmqpException e) {
             e.printStackTrace();
         }finally {

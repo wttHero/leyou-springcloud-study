@@ -13,7 +13,7 @@
         <module>leyou-registry</module>
         <module>leyou-gateway</module>
         <module>leyou-item</module>
-        <module>leyou-common</module>
+        <!--从父工程整体打包时需要移除leyou-common模块，否则会打包失败（由于该模块只能生产可编译jar）-->
         <module>leyou-common</module>
         <module>leyou-upload</module>
         <module>leyou-goods-web</module>
@@ -78,12 +78,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-            <!--FastDFS客户端-->
-<!--            <dependency>-->
-<!--                <groupId>org.csource</groupId>-->
-<!--                <artifactId>fastdfs-client-java</artifactId>-->
-<!--                <version>${fastDFS.client.version}</version>-->
-<!--            </dependency>-->
             <!-- https://mvnrepository.com/artifact/com.github.tobato/fastdfs-client -->
             <dependency>
                 <groupId>com.github.tobato</groupId>
@@ -95,14 +89,33 @@
 
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.1</version>-->
+<!--                <configuration>-->
+<!--                    <source>${java.version}</source>-->
+<!--                    <target>${java.version}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>2.19.1</version>-->
+<!--                <configuration>-->
+<!--                    <skipTests>true</skipTests>    &lt;!&ndash;默认关掉单元测试 &ndash;&gt;-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--打包时携带本地映入的jar-->
-                <configuration>
-                    <executable>true</executable>
-                    <includeSystemScope>true</includeSystemScope>
-                </configuration>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>repackage</goal>&lt;!&ndash;可以把依赖的包都打包到生成的Jar包中&ndash;&gt;-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
         </plugins>
     </build>

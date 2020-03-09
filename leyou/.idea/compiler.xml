@@ -18,11 +18,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="leyou" options="-parameters" />
+      <module name="leyou" options="" />
       <module name="leyou-common" options="-parameters" />
       <module name="leyou-gateway" options="-parameters" />
       <module name="leyou-goods-web" options="-parameters" />
-      <module name="leyou-item" options="-parameters" />
+      <module name="leyou-item" options="" />
       <module name="leyou-item-interface" options="-parameters" />
       <module name="leyou-item-service" options="-parameters" />
       <module name="leyou-registry" options="-parameters" />
